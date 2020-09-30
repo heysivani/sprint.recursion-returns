@@ -2,19 +2,19 @@ const getElementsByClassName = (target) => {
   let output = [];
   let topNodes = document.children;
   function traverse(nodes) {
-    for (const node of nodes) {
-      if (node.classList === target) {
-        output.push(node);
+    for (let i = 0; i < nodes.length; i++) {
+      if (nodes[i].classList[0] === target) {
+        output.push(nodes[i]);
       }
-      if (node.children === undefined) {
+      if (nodes[i].children === undefined) {
         continue;
       }
-      let kids = node.children;
+      let kids = nodes[i].children;
       traverse(kids);
     }
     return;
   }
-  output = traverse(topNodes);
+  traverse(topNodes);
   return output;
 };
 
