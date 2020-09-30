@@ -10,7 +10,7 @@ describe("robotPaths", () => {
     expect(RobotPaths).to.be.a("function");
   });
 
-  it("should return a number", () => {
+  it.only("should return a number", () => {
     const path = new RobotPaths(3);
     expect(path).not.to.be.undefined;
     expect(path.solve).to.be.a("function");
